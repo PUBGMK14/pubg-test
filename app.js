@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Authentication uchun
 const AUTH_KEY = "4C445AF6BC4B387F162CF83316EE4";
@@ -547,7 +548,7 @@ app.delete('/api/player/:id/:authKey?', authMiddleware, async (req, res) => {
   }
 });
 
-// Boshlang'ich sahifa yaratish
+/* Boshlang'ich sahifa yaratish
 app.get('/', (req, res) => {
   // Agar index.html fayli mavjud bo'lmasa, uni yaratamiz
   const indexPath = path.join(__dirname, 'public', 'index.html');
