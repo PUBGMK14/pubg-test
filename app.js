@@ -807,6 +807,7 @@ app.get('/', (req, res) => {
     </html>
   `);
 });
+*/
 
 // Serverni ishga tushirish
 app.listen(PORT, () => {
